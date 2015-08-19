@@ -1,2 +1,3 @@
 # Myvimrc
-keep my newest version of vimrc
+* Keep my newest version of vimrc
+* Add Vim Plugin : Bundle
