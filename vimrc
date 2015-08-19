@@ -1,15 +1,15 @@
 "This section I can handle!"
 "colorscheme torte
 "colorscheme murphy
-"colorscheme desert 
+colorscheme desert 
 "colorscheme elflord
-colorscheme ron
+"colorscheme ron
 
 "This section I can handle!"
-set fencs=utf-8,gb18030,gbk,gb2312
+set fencs=utf-8,gbk
 set termencoding=utf-8
 set encoding=utf-8
-set fileencodings=utf-8,gbk,gdk18030,gb2312
+set fileencodings=utf-8,gbk
 set fileencoding=utf-8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,11 +35,13 @@ set laststatus=1    " 启动显示状态行(1),总是显示状态行(2)
 "set foldmethod=manual   " 手动折叠  
 "set background=dark "背景使用黑色 
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
+
 " 显示中文帮助
 if version >= 603
 	set helplang=cn
 	set encoding=utf-8
 endif
+
 " 设置配色方案
 "新建.c,.h,.sh,.java文件，自动插入文件头 
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
@@ -47,12 +49,12 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 func SetTitle() 
 	"如果文件类型为.sh文件 
 	if &filetype == 'sh' 
-		call setline(1,"\#########################################################################") 
+		call setline(1,"\######################################################################") 
 		call append(line("."), "\# File Name: ".expand("%")) 
 		call append(line(".")+1, "\# Author: mudongliang") 
 		call append(line(".")+2, "\# mail: mudongliangabcd@163.com") 
 		call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
-		call append(line(".")+4, "\#########################################################################") 
+		call append(line(".")+4, "\#######################################################################") 
 		call append(line(".")+5, "\#!/bin/bash") 
 		call append(line(".")+6, "") 
 	else 
@@ -84,10 +86,11 @@ func SetTitle()
 	"新建文件后，自动定位到文件末尾
 	autocmd BufNewFile * normal G
 endfunc 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"键盘命令
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"键盘命令
+"""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","
 nmap <leader>w :w!<cr>
 nmap <leader>f :find<cr>
 
@@ -108,9 +111,9 @@ map <F3> :tabnew .<CR>
 "打开树状文件目录  
 map <C-F3> \be  
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 ""实用设置
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " 设置当文件被改动时自动载入
 set autoread
 " quickfix模式
@@ -221,4 +224,20 @@ au BufRead,BufNewFile *  setfiletype txt
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
