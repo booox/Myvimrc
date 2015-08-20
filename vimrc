@@ -17,6 +17,28 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gbk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible			  " be iMproved,required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Code complete
+Plugin 'snipMate'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示相关  
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set shortmess=atI   	" 启动的时候不显示那个援助乌干达儿童的提示  
@@ -138,7 +160,7 @@ set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)
 " 设置在状态行显示的信息
 "set foldcolumn=0
 "set foldmethod=indent 
@@ -182,7 +204,7 @@ set gdefault
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 " 总是显示状态行
-"set laststatus=2
+set laststatus=2
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set cmdheight=2
 " 保存全局变量
@@ -214,25 +236,4 @@ set scrolloff=3
 " 为C程序提供自动缩进
 set smartindent
 " 打开文件类型检测, 加了这句才可以用智能补全
-"set completeopt=longest,menu
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible			  " be iMproved,required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Code complete
-Plugin 'snipMate'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+set completeopt=longest,menu
