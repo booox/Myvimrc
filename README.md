@@ -6,6 +6,6 @@
 # Install 
 
     $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    $ git clone https://github.com/mudongliang/Myvimrc ~/
-    $ cp ~/Myvimrc/vimrc ~/.vimrc
-    $ rm -rf ~/Myvimrc
+    $ git clone https://github.com/mudongliang/Myvimrc
+    $ cp Myvimrc/vimrc ~/.vimrc
+    $ rm -rf Myvimrc
