@@ -12,6 +12,7 @@
 
 # Brief Help
 
+    :PluginUpdate        - update all the plugins
     :PluginList          - list configured plugins
     :PluginInstall(!)    - install (update) plugins
     :PluginSearch(!) foo - search (or refresh cache first) for foo
