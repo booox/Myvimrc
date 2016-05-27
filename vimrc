@@ -16,6 +16,12 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" 语法高亮  
+syntax on
+
+" 语法高亮
+set syntax=on
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +99,9 @@ endfunc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " 历史记录数
 set history=1000
+
+syntax enable
+
 " 侦测文件类型
 filetype on
 " 载入文件类型插件
@@ -116,7 +125,8 @@ let mapleader=","
 " set <leader>w to save command
 nmap <leader>w :w!<cr>
 
-
+" set <leader>q to quit
+nmap <leader>q :q!<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -166,11 +176,6 @@ set novisualbell    	" 不要闪烁(不明白)
 " 启动的时候不显示那个援助乌干达儿童的提示  
 set shortmess=atI
 
-" 语法高亮  
-syntax on
-
-" 语法高亮
-set syntax=on
 
 " colorscheme config
 colorscheme desert 
@@ -200,7 +205,7 @@ set nobackup
 set noswapfile
 
 " quickfix模式
-"autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
+" autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -277,6 +282,9 @@ map <F3> :tabnew .<CR>
 "打开树状文件目录  
 "map <C-F3> \be  
 
+" MRU Command
+map <C-m> :MRU<CR>
+
 " NERDTree Command
 map <C-f> :NERDTreeToggle<CR>
 
@@ -297,7 +305,6 @@ autocmd InsertEnter * se cul    " 用浅色高亮当前行
 
 "自动保存
 set autowrite
-set ruler                   " 打开状态栏标尺
 set cursorline              " 突出显示当前行
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
@@ -328,3 +335,4 @@ if version >= 603
 endif
 
 set helplang=cn
+
