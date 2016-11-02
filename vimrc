@@ -33,7 +33,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
  
 " Code complete
-Plugin 'mudongliang/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+" Keep my own coding style
+Plugin 'mudongliang/vim-snippets'
 
 " NERD tree
 Plugin 'scrooloose/nerdtree'

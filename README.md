@@ -3,11 +3,6 @@
 * Add Vim Plugin : Bundle
 * Check all the other configurations
 
-# Prerequirement
-The newest version of snipmate needs this package
-
-    sudo apt-get install vim-addon-mw-utils
-
 # Install 
 
     $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -25,10 +20,19 @@ The newest version of snipmate needs this package
 
 # Installed Plugins
 
+    " let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
+ 
     " Code complete
-    Plugin 'mudongliang/vim-snipmate' 
-    " NERD tree
-    Plugin 'scrooloose/nerdtree 
-	" Plugin to manage Most Recently Used (MRU) files
-	Plugin 'mru.vim'
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
 
+    " Keep my own coding style
+    Plugin 'mudongliang/vim-snippets'
+
+    " NERD tree
+    Plugin 'scrooloose/nerdtree'
+
+    " Plugin to manage Most Recently Used (MRU) files
+    Plugin 'mru.vim'
