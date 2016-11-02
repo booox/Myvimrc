@@ -19,9 +19,6 @@
 " 语法高亮  
 syntax on
 
-" 语法高亮
-set syntax=on
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,7 +33,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
  
 " Code complete
-Plugin 'snipMate'
+Plugin 'mudongliang/vim-snipmate'
 
 " NERD tree
 Plugin 'scrooloose/nerdtree'
@@ -47,8 +44,6 @@ Plugin 'mru.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 "新建.c,.h,.sh,.java文件，自动插入文件头 
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
@@ -59,7 +54,7 @@ func SetTitle()
 		call setline(1,"\######################################################################") 
 		call append(line("."), "\# File Name: ".expand("%")) 
 		call append(line(".")+1, "\# Author: mudongliang") 
-		call append(line(".")+2, "\# mail: mudongliangabcd@163.com") 
+		call append(line(".")+2, "\# mail: mudongliangabcd@gmail.com") 
 		call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
 		call append(line(".")+4, "\#######################################################################") 
 		call append(line(".")+5, "\#!/bin/bash") 
@@ -68,7 +63,7 @@ func SetTitle()
 		call setline(1, "/*************************************************************************") 
 		call append(line("."), "	> File Name: ".expand("%")) 
 		call append(line(".")+1, "	> Author: mudongliang") 
-		call append(line(".")+2, "	> Mail: mudongliangabcdi@163.com")
+		call append(line(".")+2, "	> Mail: mudongliangabcdi@gmail.com")
 		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
 		call append(line(".")+4, " ************************************************************************/") 
 		call append(line(".")+5, "")
@@ -265,20 +260,10 @@ set scrolloff=3
 " => Editing mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" 映射全选+复制 ctrl+a
-"map <C-A> ggVGY
-"map! <C-A> <Esc>ggVGY
-"map <F12> gg=G
-" 选中状态下 Ctrl+c 复制
-"vmap <C-c> "+y
 "去空行  
 nnoremap <F2> :g/^\s*$/d<CR> 
-"比较文件  
-"nnoremap <C-F2> :vert diffsplit 
-"新建标签  
-"map <M-F2> :tabnew<CR>  
 "列出当前目录文件  
-map <F3> :tabnew .<CR>  
+"map <F3> :tabnew .<CR>  
 "打开树状文件目录  
 "map <C-F3> \be  
 
@@ -335,4 +320,3 @@ if version >= 603
 endif
 
 set helplang=cn
-

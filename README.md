@@ -3,6 +3,11 @@
 * Add Vim Plugin : Bundle
 * Check all the other configurations
 
+# Prerequirement
+The newest version of snipmate needs this package
+
+    sudo apt-get install vim-addon-mw-utils
+
 # Install 
 
     $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -21,7 +26,7 @@
 # Installed Plugins
 
     " Code complete
-    Plugin 'snipMate' 
+    Plugin 'mudongliang/vim-snipmate' 
     " NERD tree
     Plugin 'scrooloose/nerdtree 
 	" Plugin to manage Most Recently Used (MRU) files
