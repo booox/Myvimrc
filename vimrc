@@ -2,6 +2,7 @@
 " Sections:
 " 	-> General
 "       -> Vundle
+"       -> Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -11,6 +12,10 @@ syntax on
 
 " History records
 set history=1000
+
+" Show line num
+set number
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -42,3 +47,11 @@ Plugin 'mru.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Files, backups and undo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off
+set nobackup
+set noswapfile
