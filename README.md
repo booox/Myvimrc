@@ -1,7 +1,7 @@
 # Myvimrc
 * Keep my newest version of vimrc
 * Add Vim Plugin : Bundle
-* Check all the other configurations
+* Already Check all the configurations
 
 # Install 
 
@@ -12,11 +12,11 @@
 
 # Brief Help
 
-    :PluginUpdate        - update all the plugins
-    :PluginList          - list configured plugins
-    :PluginInstall(!)    - install (update) plugins
-    :PluginSearch(!) foo - search (or refresh cache first) for foo
-    :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+    :PluginUpdate	- update all the plugins
+    :PluginList		- list configured plugins
+    :PluginInstall	- install (update) plugins
+    :PluginSearch	- search (or refresh cache first) for foo
+    :PluginClean	- confirm (or auto-approve) removal of unused plugins
 
 # Installed Plugins
 
