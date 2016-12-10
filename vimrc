@@ -1,16 +1,24 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:
 " 	-> General
+" 	-> VIM user interface
 "	-> Colors and Fonts
 "       -> Vundle
 "       -> Files, backups
+"	-> Text, tab and indent related
+"	-> Visual mode related
+"	-> Moving around, tabs, windows and buffers
+"	-> Status line
+"	-> Editing mappings
+"	-> vimgrep searching and cope displaying
+"	-> Spell checking
+"	-> Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax highlighting	
-syntax on
 
 " History records
 set history=1000
@@ -18,11 +26,86 @@ set history=1000
 " Show line num
 set number
 
+" detect filetype
+filetype on
+" load filetype plugin
+filetype plugin on
+" load filetype indent
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" set <leader> to ','
+let mapleader=","
+
+" set <leader>w to save command
+nmap <leader>w :w!<cr>
+
+" set <leader>q to quit
+nmap <leader>q :q!<cr>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" command completion
+set wildmenu
+
+" need filetype detection on
+set completeopt=longest,menu
+
+" Always show current position
+set ruler
+
+" Height of the command bar
+set cmdheight=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" confirm with quit
+set confirm
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 启动的时候不显示那个援助乌干达儿童的提示  
+
+" Syntax highlighting	
+syntax on
+
+" Short message 
 set shortmess=atI
 
 " colorscheme config
@@ -34,10 +117,12 @@ colorscheme desert
 "colorscheme shine
 "colorscheme torte
 
+set encoding=utf-8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set nocompatible			  " be iMproved,required
 filetype off                  " required
 
@@ -70,8 +155,80 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Turn backup off
 set nobackup
 set noswapfile
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" auto indent
+set autoindent
+set cindent
+
+"set expandtab
+"set smarttab
+
+"set tabstop=4
+"set softtabstop=4
+"set shiftwidth=4
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visual mode related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"set mouse=a
+"set selection=exclusive
+"set selectmode=mouse,key
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving around, tabs, windows and buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+map <c-space> ?
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" MRU Command
+map <C-m> :MRU<CR>
+
+" NERDTree Command
+map <C-f> :NERDTreeToggle<CR>
+
+"autocmd InsertLeave * se nocul
+"autocmd InsertEnter * se cul
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimgrep searching and cope displaying
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
